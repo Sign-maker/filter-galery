@@ -1,0 +1,109 @@
+* {
+  box-sizing: border-box;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+body {
+  background-color: #cac9c9;
+  padding: 20px;
+  font-family: Arial;
+}
+
+/* Center website */
+.main {
+  max-width: 1000px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 50px;
+  word-break: break-all;
+}
+
+.row {
+  margin: 8px -16px;
+}
+
+/* Add padding BETWEEN each column (if you want) */
+.row,
+.row > .column {
+  padding: 8px;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  display: none; /* Hide columns by default */
+}
+
+/* Clear floats after rows */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+.content {
+  background-color: rgb(173, 174, 174);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: white;
+  cursor: pointer;
+}
+
+/* Add a grey background color on mouse-over */
+.btn:is(:hover, :focus) {
+  background-color: #ddd;
+}
+
+/* Add a dark background color to the active button */
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+
+.img-wrapper {
+  padding-bottom: 75%;
+  position: relative;
+  overflow: hidden;
+}
+.img-wrapper .example-image-link img {
+  position: absolute;
+  object-fit: cover;
+  height: 100%;
+  transition: all 250ms ease-in;
+}
+.example-image-link:is(:hover, :focus) img {
+  transform: scale(1.02);
+  filter: brightness(0.7);
+}
