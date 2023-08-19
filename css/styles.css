@@ -21,13 +21,13 @@ img {
 }
 body {
   background-color: #cac9c9;
-  padding: 20px;
+
   font-family: Arial;
 }
 
 /* Center website */
-.main {
-  max-width: 1000px;
+main {
+  /* max-width: 1000px; */
   margin: auto;
 }
 
@@ -37,34 +37,29 @@ h1 {
 }
 
 .row {
-  margin: 8px -16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: center;
+
+  /* padding-bottom:; */
 }
 
-/* Add padding BETWEEN each column (if you want) */
-.row,
-.row > .column {
-  padding: 8px;
-}
-
-/* Create three equal columns that floats next to each other */
 .column {
-  float: left;
-  width: 33.33%;
   display: none; /* Hide columns by default */
-}
+  flex-basis: 250px;
 
-/* Clear floats after rows */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+  outline: 1px dashed red;
 }
 
 /* Content */
 .content {
-  background-color: rgb(173, 174, 174);
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgb(255, 255, 255);
   padding: 10px;
+  height: 100%;
 }
 
 /* The "show" class is added to the filtered elements */
