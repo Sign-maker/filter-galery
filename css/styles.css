@@ -90,7 +90,7 @@ h1 {
 .img-wrapper {
   padding-bottom: 75%;
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .img-wrapper .example-image-link img {
   position: absolute;
@@ -98,7 +98,30 @@ h1 {
   height: 100%;
   transition: all 250ms ease-in;
 }
+.example-image-link img {
+  transition: all 250ms ease-in;
+}
 .example-image-link:is(:hover, :focus) img {
   transform: scale(1.02);
   filter: brightness(0.7);
+}
+/* =======================SWIPPER=============== */
+.swiper {
+  /* width: 600px; */
+  height: 450px;
+}
+.swiper-slide {
+  background-image: linear-gradient(90deg, rgb(105, 150, 234), white);
+  /* height: calc((100% - 30px) / 2) !important; */
+}
+.swiper-slide img {
+  object-fit: cover;
+  height: 100%;
+}
+
+@media (max-width: 639px) {
+  .swiper {
+    /* width: 600px; */
+    height: 300px;
+  }
 }

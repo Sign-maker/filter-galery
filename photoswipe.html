@@ -5,11 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./css/styles.css" />
-    <link rel="stylesheet" href="./css/lightbox.min.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
-    />
+    <link rel="stylesheet" href="./dist/photoswipe.css" />
   </head>
   <body>
     <main>
@@ -24,7 +20,7 @@
       </div>
 
       <!-- Portfolio Gallery Grid -->
-      <div class="row">
+      <div class="row" id="my-gallery">
         <div class="column nature">
           <div class="content">
             <div>
@@ -38,9 +34,9 @@
               <a
                 class="example-image-link"
                 href="http://lokeshdhakar.com/projects/lightbox2/images/image-2.jpg"
-                data-lightbox="example-set2"
-                data-title="Optional caption."
-                data-alt="qwerty"
+                data-pswp-width="1920"
+                data-pswp-height="1080"
+                target="_blank"
                 ><img
                   class="example-image"
                   src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-2.jpg"
@@ -59,7 +55,9 @@
               <a
                 class="example-image-link"
                 href="http://lokeshdhakar.com/projects/lightbox2/images/image-1.jpg"
-                data-lightbox="example-set5"
+                data-pswp-width="1920"
+                data-pswp-height="1080"
+                target="_blank"
                 ><img
                   class="example-image"
                   src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-1.jpg"
@@ -198,190 +196,16 @@
         </div>
         <!-- END GRID -->
       </div>
-
-      <div class="swiper">
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
-          <!-- Slides -->
-          <div class="swiper-slide">
-            Slide 1
-            <a
-              class="example-image-link"
-              href="http://lokeshdhakar.com/projects/lightbox2/images/image-2.jpg"
-              data-lightbox="example-set2"
-              data-title="Optional caption."
-              data-alt="qwerty"
-              ><img
-                class="example-image"
-                src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-2.jpg"
-                alt="image-1"
-            /></a>
-          </div>
-          <div class="swiper-slide">
-            Slide 2
-            <a
-              class="example-image-link"
-              href="http://lokeshdhakar.com/projects/lightbox2/images/image-1.jpg"
-              data-lightbox="example-set5"
-              ><img
-                class="example-image"
-                src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-1.jpg"
-                alt="image-1"
-            /></a>
-          </div>
-          <div class="swiper-slide">
-            Slide 3
-            <a
-              class="example-image-link"
-              href="http://lokeshdhakar.com/projects/lightbox2/images/image-5.jpg"
-              data-lightbox="example-set1"
-              data-title="The next image in the set is preloaded as you're viewing."
-              ><img
-                class="example-image"
-                src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-5.jpg"
-                alt=""
-            /></a>
-          </div>
-          <div class="swiper-slide">
-            Slide 4
-            <a
-              class="example-image-link"
-              href="http://lokeshdhakar.com/projects/lightbox2/images/image-3.jpg"
-              data-lightbox="example-set2"
-              data-title="Click the right half of the image to move forward."
-              ><img
-                class="example-image"
-                src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-3.jpg"
-                alt=""
-            /></a>
-          </div>
-          <div class="swiper-slide">Slide 5</div>
-          <div class="swiper-slide">
-            Slide 6
-            <a
-              class="example-image-link"
-              href="http://lokeshdhakar.com/projects/lightbox2/images/image-6.jpg"
-              data-lightbox="example-set3"
-              data-title="Click anywhere outside the image or the X to the right to close."
-              ><img
-                class="example-image"
-                src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-6.jpg"
-                alt=""
-            /></a>
-          </div>
-        </div>
-        <!-- If we need pagination -->
-        <div class="swiper-pagination"></div>
-
-        <!-- If we need navigation buttons -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-
-        <!-- If we need scrollbar -->
-        <div class="swiper-scrollbar"></div>
-      </div>
     </main>
-    <script src="./js/filter-gallery.js"></script>
-    <script src="./js/lightbox-plus-jquery.min.js"></script>
-
+    <script type="module" src="./js/filter-gallery.js"></script>
     <script type="module">
-      import Swiper from "https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.mjs";
-
-      const swiper = new Swiper(".swiper", {
-        // Optional parameters
-        // direction: "vertical",
-        loop: true,
-        slidesPerView: 1.2,
-        spaceBetween: 10,
-        // centeredSlides: true,
-        centeredSlidesBounds: true,
-
-        // effect: "coverflow",
-
-        // coverflowEffect: {
-        //   rotate: 50,
-        //   stretch: 0,
-        //   depth: 100,
-        //   modifier: 1,
-        //   slideShadows: true,
-        // },
-
-        freeMode: {
-          enabled: true,
-          sticky: true,
-        },
-
-        // slidesPerGroupSkip: 1,
-        // slidesPerGroup: 1,
-        grabCursor: true,
-
-        keyboard: {
-          enabled: true,
-        },
-
-        // autoplay: {
-        //   delay: 2500,
-        //   disableOnInteraction: true,
-        //   pauseOnMouseEnter: true,
-        // },
-
-        // If we need pagination
-        pagination: {
-          el: ".swiper-pagination",
-          // type: "progressbar",
-          // type: "fraction",
-        },
-
-        // Navigation arrows
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-
-        // And if we need scrollbar
-        scrollbar: {
-          el: ".swiper-scrollbar",
-        },
-        // Responsive breakpoints
-        // breakpoints: {
-        //   // when window width is >= 320px
-        //   768: {
-        //     slidesPerView: 2,
-        //     grid: {
-        //       rows: 2,
-        //     },
-        //     // slidesPerGroup: 2,
-        //   },
-        // },
-        // // Responsive breakpoints
-        breakpoints: {
-          //   // when window width is >= 320px
-          320: {
-            slidesPerView: 2.2,
-            spaceBetween: 10,
-          },
-          //   // when window width is >= 480px
-          //   480: {
-          //     slidesPerView: 2,
-          //     spaceBetween: 20,
-          //   },
-          //   // when window width is >= 640px
-          640: {
-            slidesPerView: 1.2,
-            spaceBetween: 24,
-            centeredSlides: true,
-          },
-        },
+      import PhotoSwipeLightbox from "./dist/photoswipe-lightbox.esm.js";
+      const lightbox = new PhotoSwipeLightbox({
+        gallery: "#my-gallery",
+        children: "a",
+        pswpModule: () => import("./dist/photoswipe.esm.js"),
       });
-    </script>
-
-    <script>
-      lightbox.option({
-        resizeDuration: 300,
-        fadeDuration: 200,
-        imageFadeDuration: 200,
-        wrapAround: true,
-      });
+      lightbox.init();
     </script>
   </body>
 </html>
