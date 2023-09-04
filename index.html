@@ -204,7 +204,7 @@
         <div class="swiper-wrapper">
           <!-- Slides -->
           <div class="swiper-slide">
-            Slide 1
+            <!-- Slide 1 -->
             <a
               class="example-image-link"
               href="http://lokeshdhakar.com/projects/lightbox2/images/image-2.jpg"
@@ -218,7 +218,7 @@
             /></a>
           </div>
           <div class="swiper-slide">
-            Slide 2
+            <!-- Slide 2 -->
             <a
               class="example-image-link"
               href="http://lokeshdhakar.com/projects/lightbox2/images/image-1.jpg"
@@ -230,7 +230,7 @@
             /></a>
           </div>
           <div class="swiper-slide">
-            Slide 3
+            <!-- Slide 3 -->
             <a
               class="example-image-link"
               href="http://lokeshdhakar.com/projects/lightbox2/images/image-5.jpg"
@@ -243,7 +243,7 @@
             /></a>
           </div>
           <div class="swiper-slide">
-            Slide 4
+            <!-- Slide 4 -->
             <a
               class="example-image-link"
               href="http://lokeshdhakar.com/projects/lightbox2/images/image-3.jpg"
@@ -255,9 +255,11 @@
                 alt=""
             /></a>
           </div>
-          <div class="swiper-slide">Slide 5</div>
           <div class="swiper-slide">
-            Slide 6
+            <!-- Slide 5 -->
+          </div>
+          <div class="swiper-slide">
+            <!-- Slide 6 -->
             <a
               class="example-image-link"
               href="http://lokeshdhakar.com/projects/lightbox2/images/image-6.jpg"
@@ -290,11 +292,13 @@
       const swiper = new Swiper(".swiper", {
         // Optional parameters
         // direction: "vertical",
+        resizeObserver: true,
+        updateOnWindowResize: true,
         loop: true,
         slidesPerView: 1.2,
         spaceBetween: 10,
-        // centeredSlides: true,
-        centeredSlidesBounds: true,
+        centeredSlides: false,
+        // centeredSlidesBounds: true,
 
         // effect: "coverflow",
 
@@ -334,6 +338,7 @@
 
         // Navigation arrows
         navigation: {
+          enabled: false,
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
         },
@@ -356,9 +361,13 @@
         // // Responsive breakpoints
         breakpoints: {
           //   // when window width is >= 320px
-          320: {
+          250: {
             slidesPerView: 2.2,
             spaceBetween: 10,
+            centeredSlides: false,
+            navigation: {
+              enabled: false,
+            },
           },
           //   // when window width is >= 480px
           //   480: {
@@ -370,6 +379,11 @@
             slidesPerView: 1.2,
             spaceBetween: 24,
             centeredSlides: true,
+            navigation: {
+              enabled: true,
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
           },
         },
       });

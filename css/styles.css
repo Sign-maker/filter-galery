@@ -29,6 +29,8 @@ body {
 main {
   /* max-width: 1000px; */
   margin: auto;
+  padding-top: 96px;
+  padding-bottom: 96px;
 }
 
 h1 {
@@ -41,6 +43,7 @@ h1 {
   flex-wrap: wrap;
   gap: 5px;
   justify-content: center;
+  padding-bottom: 96px;
 
   /* padding-bottom:; */
 }
@@ -113,15 +116,23 @@ h1 {
 .swiper-slide {
   background-image: linear-gradient(90deg, rgb(105, 150, 234), white);
   /* height: calc((100% - 30px) / 2) !important; */
+  border-radius: 15px;
+  overflow: hidden;
 }
 .swiper-slide img {
   object-fit: cover;
   height: 100%;
 }
-
-@media (max-width: 639px) {
+@media (max-width: 339px) {
   .swiper {
     /* width: 600px; */
     height: 300px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .swiper {
+    /* width: 600px; */
+    height: 350px;
   }
 }
