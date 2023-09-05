@@ -113,6 +113,19 @@ h1 {
   /* width: 600px; */
   height: 450px;
 }
+@media (max-width: 339px) {
+  .swiper {
+    /* width: 600px; */
+    height: 300px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .swiper {
+    /* width: 600px; */
+    height: 350px;
+  }
+}
 .swiper-slide {
   background-image: linear-gradient(90deg, rgb(105, 150, 234), white);
   /* height: calc((100% - 30px) / 2) !important; */
@@ -123,15 +136,20 @@ h1 {
   object-fit: cover;
   height: 100%;
 }
+
+.swiper2 {
+  /* width: 600px; */
+  height: 450px;
+}
 @media (max-width: 339px) {
-  .swiper {
+  .swiper2 {
     /* width: 600px; */
     height: 300px;
   }
 }
 
 @media (max-width: 1024px) {
-  .swiper {
+  .swiper2 {
     /* width: 600px; */
     height: 350px;
   }

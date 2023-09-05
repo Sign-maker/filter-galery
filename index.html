@@ -199,7 +199,7 @@
         <!-- END GRID -->
       </div>
 
-      <div class="swiper">
+      <div class="swiper swiper1">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
           <!-- Slides -->
@@ -280,7 +280,90 @@
         <div class="swiper-button-next"></div>
 
         <!-- If we need scrollbar -->
-        <div class="swiper-scrollbar"></div>
+        <!-- <div class="swiper-scrollbar"></div> -->
+      </div>
+      <div class="swiper swiper2">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <!-- Slide 1 -->
+            <a
+              class="example-image-link"
+              href="http://lokeshdhakar.com/projects/lightbox2/images/image-2.jpg"
+              data-lightbox="example-set2"
+              data-title="Optional caption."
+              data-alt="qwerty"
+              ><img
+                class="example-image"
+                src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-2.jpg"
+                alt="image-1"
+            /></a>
+          </div>
+          <div class="swiper-slide">
+            <!-- Slide 2 -->
+            <a
+              class="example-image-link"
+              href="http://lokeshdhakar.com/projects/lightbox2/images/image-1.jpg"
+              data-lightbox="example-set5"
+              ><img
+                class="example-image"
+                src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-1.jpg"
+                alt="image-1"
+            /></a>
+          </div>
+          <div class="swiper-slide">
+            <!-- Slide 3 -->
+            <a
+              class="example-image-link"
+              href="http://lokeshdhakar.com/projects/lightbox2/images/image-5.jpg"
+              data-lightbox="example-set1"
+              data-title="The next image in the set is preloaded as you're viewing."
+              ><img
+                class="example-image"
+                src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-5.jpg"
+                alt=""
+            /></a>
+          </div>
+          <div class="swiper-slide">
+            <!-- Slide 4 -->
+            <a
+              class="example-image-link"
+              href="http://lokeshdhakar.com/projects/lightbox2/images/image-3.jpg"
+              data-lightbox="example-set2"
+              data-title="Click the right half of the image to move forward."
+              ><img
+                class="example-image"
+                src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-3.jpg"
+                alt=""
+            /></a>
+          </div>
+          <div class="swiper-slide">
+            <!-- Slide 5 -->
+          </div>
+          <div class="swiper-slide">
+            <!-- Slide 6 -->
+            <a
+              class="example-image-link"
+              href="http://lokeshdhakar.com/projects/lightbox2/images/image-6.jpg"
+              data-lightbox="example-set3"
+              data-title="Click anywhere outside the image or the X to the right to close."
+              ><img
+                class="example-image"
+                src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-6.jpg"
+                alt=""
+            /></a>
+          </div>
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <!-- If we need scrollbar -->
+        <!-- <div class="swiper-scrollbar"></div> -->
       </div>
     </main>
     <script src="./js/filter-gallery.js"></script>
@@ -289,7 +372,111 @@
     <script type="module">
       import Swiper from "https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.mjs";
 
-      const swiper = new Swiper(".swiper", {
+      const swiper1 = new Swiper(".swiper1", {
+        // Optional parameters
+        // direction: "vertical",
+        resizeObserver: true,
+        updateOnWindowResize: true,
+
+        // slidesPerView: 1.2,
+        spaceBetween: 10,
+        centeredSlides: false,
+        // centeredSlidesBounds: true,
+
+        // effect: "coverflow",
+
+        // coverflowEffect: {
+        //   rotate: 50,
+        //   stretch: 0,
+        //   depth: 100,
+        //   modifier: 1,
+        //   slideShadows: true,
+        // },
+
+        freeMode: {
+          enabled: true,
+          // sticky: true,
+          momentumRatio: 0.5,
+          momentumVelocityRatio: 1,
+        },
+
+        // slidesPerGroupSkip: 1,
+        // slidesPerGroup: 1,
+        grabCursor: true,
+
+        keyboard: {
+          enabled: true,
+        },
+
+        // autoplay: {
+        //   delay: 2500,
+        //   disableOnInteraction: true,
+        //   pauseOnMouseEnter: true,
+        // },
+
+        // If we need pagination
+        pagination: {
+          el: ".swiper-pagination",
+          // type: "progressbar",
+          // type: "fraction",
+        },
+
+        // Navigation arrows
+        navigation: {
+          enabled: false,
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+
+        // And if we need scrollbar
+        // scrollbar: {
+        //   el: ".swiper-scrollbar",
+        // },
+
+        // Responsive breakpoints
+        // breakpoints: {
+        //   // when window width is >= 320px
+        //   768: {
+        //     slidesPerView: 2,
+        //     grid: {
+        //       rows: 2,
+        //     },
+        //     // slidesPerGroup: 2,
+        //   },
+        // },
+        // // Responsive breakpoints
+        breakpoints: {
+          //   // when window width is >= 320px
+          250: {
+            // loop: false,
+            slidesPerView: 1.2,
+            spaceBetween: 10,
+            centeredSlides: true,
+            navigation: {
+              enabled: false,
+            },
+          },
+          //   // when window width is >= 480px
+          //   480: {
+          //     slidesPerView: 2,
+          //     spaceBetween: 20,
+          //   },
+          //   // when window width is >= 640px
+          640: {
+            // loop: true,
+            slidesPerView: 2,
+            spaceBetween: 24,
+            centeredSlides: true,
+            navigation: {
+              enabled: true,
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+          },
+        },
+      });
+
+      const swiper2 = new Swiper(".swiper2", {
         // Optional parameters
         // direction: "vertical",
         resizeObserver: true,
@@ -349,6 +536,7 @@
         // scrollbar: {
         //   el: ".swiper-scrollbar",
         // },
+
         // Responsive breakpoints
         // breakpoints: {
         //   // when window width is >= 320px
@@ -364,8 +552,8 @@
         breakpoints: {
           //   // when window width is >= 320px
           250: {
-            loop: false,
-            slidesPerView: 1.3,
+            // loop: false,
+            slidesPerView: 2.3,
             spaceBetween: 10,
             centeredSlides: false,
             navigation: {
@@ -379,8 +567,8 @@
           //   },
           //   // when window width is >= 640px
           640: {
-            loop: true,
-            slidesPerView: 1.2,
+            // loop: true,
+            slidesPerView: 4,
             spaceBetween: 24,
             centeredSlides: true,
             navigation: {
