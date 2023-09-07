@@ -4,16 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./css/styles.css" />
     <link rel="stylesheet" href="./css/lightbox.min.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
     />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.thumbs.css"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
     <main>
-      <h2>PORTFOLIO</h2>
+      <!-- <h2>PORTFOLIO</h2>
       <div id="myBtnContainer">
         <button class="btn active" onclick="filterSelection('all')">
           Show all
@@ -21,7 +34,7 @@
         <button class="btn" onclick="filterSelection('nature')">Nature</button>
         <button class="btn" onclick="filterSelection('cars')">Cars</button>
         <button class="btn" onclick="filterSelection('people')">People</button>
-      </div>
+      </div> -->
 
       <!-- Portfolio Gallery Grid -->
       <!-- <div class="row">
@@ -206,7 +219,8 @@
           <div class="swiper-slide">
             <!-- Slide 1 -->
             <a
-              href="http://lokeshdhakar.com/projects/lightbox2/images/image-2.jpg"
+              data-fancybox
+              href="https://swiperjs.com/demos/images/nature-1.jpg"
               ><img
                 loading="lazy"
                 src="https://swiperjs.com/demos/images/nature-1.jpg"
@@ -219,7 +233,8 @@
           <div class="swiper-slide">
             <!-- Slide 2 -->
             <a
-              href="http://lokeshdhakar.com/projects/lightbox2/images/image-1.jpg"
+              data-fancybox
+              href="https://swiperjs.com/demos/images/nature-2.jpg"
               ><img
                 loading="lazy"
                 src="https://swiperjs.com/demos/images/nature-2.jpg"
@@ -363,9 +378,60 @@
 
         <div class="swiper-scrollbar"></div>
       </div> -->
+
+      <div class="f-carousel" id="myCarousel">
+        <div class="f-carousel__slide">
+          <a
+            data-fancybox="gallery"
+            href="http://lokeshdhakar.com/projects/lightbox2/images/image-1.jpg"
+            ><img
+              loading="lazy"
+              src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-1.jpg"
+              alt="image-1"
+          /></a>
+        </div>
+        <div class="f-carousel__slide">
+          <a
+            data-fancybox="gallery"
+            href="http://lokeshdhakar.com/projects/lightbox2/images/image-2.jpg"
+            ><img
+              loading="lazy"
+              src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-2.jpg"
+              alt="image-1"
+          /></a>
+        </div>
+        <div class="f-carousel__slide">
+          <a
+            data-fancybox="gallery"
+            href="http://lokeshdhakar.com/projects/lightbox2/images/image-3.jpg"
+            ><img
+              loading="lazy"
+              src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-3.jpg"
+              alt="image-1"
+          /></a>
+        </div>
+        <div class="f-carousel__slide">
+          <a
+            data-fancybox="gallery"
+            href="http://lokeshdhakar.com/projects/lightbox2/images/image-4.jpg"
+            ><img
+              loading="lazy"
+              src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-4.jpg"
+              alt="image-1"
+          /></a>
+        </div>
+      </div>
     </main>
-    <script src="./js/filter-gallery.js"></script>
-    <script src="./js/lightbox-plus-jquery.min.js"></script>
+    <!-- <script src="./js/filter-gallery.js"></script> -->
+    <!-- <script src="./js/lightbox-plus-jquery.min.js"></script> -->
+    <!-- <script>
+      lightbox.option({
+        resizeDuration: 300,
+        fadeDuration: 200,
+        imageFadeDuration: 200,
+        wrapAround: true,
+      });
+    </script> -->
 
     <script type="module">
       import Swiper from "https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.mjs";
@@ -583,13 +649,34 @@
       });
     </script>
 
-    <script>
-      lightbox.option({
-        resizeDuration: 300,
-        fadeDuration: 200,
-        imageFadeDuration: 200,
-        wrapAround: true,
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script type="module">
+      Fancybox.bind("[data-fancybox]", {
+        // Your custom options
       });
+      Fancybox.bind('[data-fancybox="gallery"]', {
+        // Your custom options
+      });
+      // Fancybox.bind("#gallery a", {
+      //   groupAll: true,
+      // });
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.umd.js"></script>
+
+    <script type="module">
+      const container = document.getElementById("myCarousel");
+      const options = {
+        // Navigation: {
+        //   nextTpl: "Next page",
+        //   prevTpl: "Previous page",
+        // },
+        infinite: false,
+      };
+
+      new Carousel(container, options);
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.thumbs.umd.js"></script>
   </body>
 </html>
