@@ -380,7 +380,10 @@
       </div> -->
 
       <div class="f-carousel" id="myCarousel">
-        <div class="f-carousel__slide">
+        <div
+          class="f-carousel__slide"
+          data-thumb-src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-1.jpg"
+        >
           <a
             data-fancybox="gallery"
             href="http://lokeshdhakar.com/projects/lightbox2/images/image-1.jpg"
@@ -390,7 +393,10 @@
               alt="image-1"
           /></a>
         </div>
-        <div class="f-carousel__slide">
+        <div
+          class="f-carousel__slide"
+          data-thumb-src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-2.jpg"
+        >
           <a
             data-fancybox="gallery"
             href="http://lokeshdhakar.com/projects/lightbox2/images/image-2.jpg"
@@ -400,7 +406,10 @@
               alt="image-1"
           /></a>
         </div>
-        <div class="f-carousel__slide">
+        <div
+          class="f-carousel__slide"
+          data-thumb-src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-3.jpg"
+        >
           <a
             data-fancybox="gallery"
             href="http://lokeshdhakar.com/projects/lightbox2/images/image-3.jpg"
@@ -410,7 +419,10 @@
               alt="image-1"
           /></a>
         </div>
-        <div class="f-carousel__slide">
+        <div
+          class="f-carousel__slide"
+          data-thumb-src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-4.jpg"
+        >
           <a
             data-fancybox="gallery"
             href="http://lokeshdhakar.com/projects/lightbox2/images/image-4.jpg"
@@ -655,6 +667,32 @@
         // Your custom options
       });
       Fancybox.bind('[data-fancybox="gallery"]', {
+        // compact: false,
+        // idle: false,
+
+        // animated: false,
+        // showClass: false,
+        // hideClass: false,
+
+        // dragToClose: false,
+        // contentClick: false,
+
+        // Images: {
+        //   // Disable animation from/to thumbnail on start/close
+        //   zoom: false,
+        // },
+
+        Toolbar: {
+          display: {
+            left: ["infobar"],
+            middle: [],
+            right: ["iterateZoom", "close"],
+          },
+        },
+
+        Thumbs: {
+          type: false,
+        },
         // Your custom options
       });
       // Fancybox.bind("#gallery a", {
@@ -663,20 +701,34 @@
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.thumbs.umd.js"></script>
 
     <script type="module">
       const container = document.getElementById("myCarousel");
       const options = {
-        // Navigation: {
-        //   nextTpl: "Next page",
-        //   prevTpl: "Previous page",
-        // },
         infinite: false,
+        Dots: false,
+        // Thumbs: {
+        //   type: "classic",
+        //   Carousel: {
+        //     slidesPerPage: 1,
+        //     Navigation: true,
+        //     center: true,
+        //     fill: true,
+        //     dragFree: true,
+        //   },
+        // },
+        Thumbs: false,
+        breakpoints: {
+          "(min-width: 768px)": {
+            Thumbs: {
+              type: "modern",
+            },
+          },
+        },
       };
 
-      new Carousel(container, options);
+      new Carousel(container, options, { Thumbs });
     </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.thumbs.umd.js"></script>
   </body>
 </html>
